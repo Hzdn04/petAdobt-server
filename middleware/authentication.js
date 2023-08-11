@@ -1,13 +1,12 @@
 const { tokenVerify } = require("../helpers/jsonwebtoken");
 
 const authentication = (req, res, next) => {
-  console.log("Middleware Authentication");
   const access_token = req.headers.access_token;
 
   //   console.log(verifyToken);
 
   if (access_token) {
-    console.log("Token found!");
+    // console.log("Token found!");
     try {
       let verifyToken = tokenVerify(access_token);
       //   console.log(verifyToken);

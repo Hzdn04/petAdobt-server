@@ -21,7 +21,7 @@ class UserController {
       let userProfile = await user.findByPk(id);
 
       userProfile
-        ? res.status(200).json(userProfile)
+        ? res.status(200).json({ data: userProfile})
         : res.status(404).json({ message: `User not found` });
     } catch (error) {
       req.status(500).json(error);
